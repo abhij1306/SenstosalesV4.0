@@ -5,10 +5,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig: NextConfig = {
-    output: 'standalone', // Enable for Electron (spawned server)
+    // output: 'standalone', // Removed for Vercel compatibility
     reactStrictMode: true,
     poweredByHeader: false,
     compress: true,
+    turbopack: {}, // Empty config for Next.js 16 compatibility
     images: {
         unoptimized: false, // Standard handling
         formats: ['image/avif', 'image/webp'],
@@ -34,15 +35,7 @@ const nextConfig: NextConfig = {
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
     },
-    turbopack: {
-        root: process.cwd(),
-        rules: {
-            '*.svg': {
-                loaders: ['@svgr/webpack'],
-                as: '*.js',
-            },
-        },
-    },
+    // turbopack section removed - handled by Vercel
     async rewrites() {
         return [
             {
