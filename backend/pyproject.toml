@@ -1,0 +1,37 @@
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+# Mandated rule sets from Phase 1 and local refinements
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "B",   # flake8-bugbear (common bugs)
+    "I",   # isort (import sorting)
+    "N",   # pep8-naming
+    "UP",  # pyupgrade (modern syntax)
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+    "RUF", # Ruff-specific rules
+]
+
+ignore = [
+    "E501",   # line too long (handled by formatter)
+    "B008",   # function calls in argument defaults (FastAPI uses Depends())
+    "E701",   # multiple statements on one line (colon)
+    "B904",   # Within an `except` clause, raise from `e`
+    "B023",   # Function definition does not bind loop variable
+    "E722",   # Do not use bare `except`
+    "N805",   # First argument of a method should be named 'self' (Pydantic validators)
+    "RUF013", # Implicit Optional
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"app/main.py" = ["E402"]
+"app/routers/*.py" = ["B008"]

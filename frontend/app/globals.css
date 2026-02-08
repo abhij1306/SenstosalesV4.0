@@ -1,0 +1,1428 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* ==========================================================================
+   AETHER DESIGN SYSTEM v1.0
+   A comprehensive, token-based design system for futuristic ERP applications
+   ========================================================================== */
+
+@theme {
+  /* Font Families */
+  --font-sans: "Google Sans", Arial, sans-serif;
+  --font-display: "Google Sans", Arial, sans-serif;
+  --font-mono: "Google Sans", Arial, sans-serif;
+  
+  /* ==========================================================================
+     DESIGN TOKENS - CORE VARIABLES
+     All visual values are defined as tokens for consistency
+     ========================================================================== */
+  
+  /* --------------------------------------------------------------------------
+     COLOR PRIMITIVES
+     Base color palette - semantic tokens reference these
+     -------------------------------------------------------------------------- */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  /* Neutral Scale (Cool Gray) */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
+  
+  /* Primary Scale (Royal Blue) */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
+  
+  /* Success Scale (Emerald) */
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+  --color-emerald-950: #022c22;
+  
+  /* Warning Scale (Amber) */
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-amber-950: #451a03;
+  
+  /* Error Scale (Rose) */
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-300: #fda4af;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-rose-700: #be123c;
+  --color-rose-800: #9f1239;
+  --color-rose-900: #881337;
+  --color-rose-950: #4c0519;
+  
+  /* Cyan Accent (Futuristic touch) */
+  --color-cyan-50: #ecfeff;
+  
+  /* Brand Colors - External Tools */
+  --color-excel: #217346;
+  --color-excel-hover: #1a5c38;
+  --color-excel-light: #e6f4ea;
+  --color-pdf: #f40f02;
+  --color-pdf-hover: #c40a02;
+  --color-word: #2b579a;
+  --color-word-hover: #1e3d6e;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
+  --color-cyan-950: #083344;
+  
+  /* Violet Accent (Secondary) */
+  --color-violet-50: #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-300: #c4b5fd;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  --color-violet-800: #5b21b6;
+  --color-violet-900: #4c1d95;
+  --color-violet-950: #2e1065;
+  
+  /* --------------------------------------------------------------------------
+     SEMANTIC COLOR TOKENS
+     Contextual colors that adapt to light/dark mode
+     -------------------------------------------------------------------------- */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  
+  /* Primary Action Colors */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-contrast: var(--primary-contrast);
+  
+  /* Secondary Colors */
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-subtle: var(--secondary-subtle);
+  --color-secondary-contrast: var(--secondary-contrast);
+  
+  /* Status Colors */
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-contrast: var(--success-contrast);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-contrast: var(--warning-contrast);
+  --color-error: var(--error);
+  --color-error-subtle: var(--error-subtle);
+  --color-error-contrast: var(--error-contrast);
+  --color-info: var(--info);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-contrast: var(--info-contrast);
+  
+  /* Text Colors - Standard Tailwind v4 semantic names */
+  --color-foreground: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --color-subtle: var(--text-tertiary);
+  --color-disabled: var(--text-disabled);
+  --color-inverse: var(--text-inverse);
+  
+  /* --------------------------------------------------------------------------
+     TYPOGRAPHY SCALE
+     Major Second (1.125) type scale with rem units
+     CORRECTED for Tailwind v4: Using --font-size-* naming
+     -------------------------------------------------------------------------- */
+  /* Font Sizes - Generates text-xs, text-sm, etc. utilities */
+  --font-size-xs: 0.75rem;           /* 12px */
+  --font-size-xs--line-height: 1rem; /* 16px */
+  
+  --font-size-sm: 0.8125rem;         /* 13px */
+  --font-size-sm--line-height: 1.125rem; /* 18px */
+  
+  --font-size-base: 0.875rem;        /* 14px */
+  --font-size-base--line-height: 1.25rem; /* 20px */
+  
+  --font-size-md: 1rem;              /* 16px */
+  --font-size-md--line-height: 1.5rem; /* 24px */
+  
+  --font-size-lg: 1.125rem;          /* 18px */
+  --font-size-lg--line-height: 1.75rem; /* 28px */
+  
+  --font-size-xl: 1.25rem;           /* 20px */
+  --font-size-xl--line-height: 1.75rem; /* 28px */
+  
+  --font-size-2xl: 1.5rem;           /* 24px */
+  --font-size-2xl--line-height: 2rem; /* 32px */
+  
+  --font-size-3xl: 1.875rem;         /* 30px */
+  --font-size-3xl--line-height: 2.25rem; /* 36px */
+  
+  --font-size-4xl: 2.25rem;          /* 36px */
+  --font-size-4xl--line-height: 2.5rem; /* 40px */
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* --------------------------------------------------------------------------
+     SPACING SCALE
+     4px base unit (0.25rem) - 8px grid
+     -------------------------------------------------------------------------- */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;   /* 2px */
+  --space-1: 0.25rem;      /* 4px */
+  --space-1-5: 0.375rem;   /* 6px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-2-5: 0.625rem;   /* 10px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-3-5: 0.875rem;   /* 14px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-7: 1.75rem;      /* 28px */
+  --space-8: 2rem;         /* 32px */
+  --space-9: 2.25rem;      /* 36px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-11: 2.75rem;     /* 44px */
+  --space-12: 3rem;        /* 48px */
+  --space-14: 3.5rem;      /* 56px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
+  --space-24: 6rem;        /* 96px */
+  --space-28: 7rem;        /* 112px */
+  --space-32: 8rem;        /* 128px */
+  --space-36: 9rem;        /* 144px */
+  --space-40: 10rem;       /* 160px */
+  --space-44: 11rem;       /* 176px */
+  --space-48: 12rem;       /* 192px */
+  --space-52: 13rem;       /* 208px */
+  --space-56: 14rem;       /* 224px */
+  --space-60: 15rem;       /* 240px */
+  --space-64: 16rem;       /* 256px */
+  --space-72: 18rem;       /* 288px */
+  --space-80: 20rem;       /* 320px */
+  --space-96: 24rem;       /* 384px */
+  
+  /* --------------------------------------------------------------------------
+     BORDER RADIUS SCALE
+     Consistent rounding for all components
+     -------------------------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-xs: 0.125rem;   /* 2px */
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.375rem;   /* 6px */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-2xl: 1rem;      /* 16px */
+  --radius-3xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+  
+  /* --------------------------------------------------------------------------
+     SHADOW SYSTEM (Elevation)
+     Layered shadows for depth and hierarchy
+     -------------------------------------------------------------------------- */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  
+  /* Colored Shadows for Glow Effects */
+  --shadow-primary-xs: 0 1px 2px 0 var(--primary-muted);
+  --shadow-primary-sm: 0 1px 3px 0 var(--primary-muted), 0 1px 2px -1px var(--primary-muted);
+  --shadow-primary-md: 0 4px 6px -1px var(--primary-muted), 0 2px 4px -2px var(--primary-muted);
+  --shadow-primary-lg: 0 10px 15px -3px var(--primary-muted), 0 4px 6px -4px var(--primary-muted);
+  
+  /* --------------------------------------------------------------------------
+     Z-INDEX SCALE
+     Stacking order management
+     -------------------------------------------------------------------------- */
+  --z-hide: -1;
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-banner: 1200;
+  --z-overlay: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-skip-link: 1600;
+  --z-toast: 1700;
+  --z-tooltip: 1800;
+  
+  /* --------------------------------------------------------------------------
+     TRANSITIONS
+     Consistent motion and timing
+     -------------------------------------------------------------------------- */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+  
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   LIGHT THEME - DEFAULT
+   Clean, modern aesthetic with subtle depth
+   ========================================================================== */
+:root {
+  /* Background Colors */
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-900);
+  --surface: var(--color-white);
+  --surface-elevated: var(--color-white);
+  --surface-sunken: var(--color-neutral-100);
+  --surface-overlay: rgba(255, 255, 255, 0.95);
+  
+  /* Border Colors */
+  --border: var(--color-neutral-300);
+  --border-subtle: var(--color-neutral-100);
+  --border-strong: var(--color-neutral-300);
+  
+  /* Primary Colors - Linear style Azure */
+  --primary: #0066ff;
+  --primary-hover: #0052cc;
+  --primary-active: #0040a3;
+  --primary-subtle: rgba(0, 102, 255, 0.05);
+  --primary-muted: rgba(0, 102, 255, 0.12);
+  --primary-contrast: var(--color-white);
+  
+  /* Secondary Colors */
+  --secondary: var(--color-violet-600);
+  --secondary-hover: var(--color-violet-700);
+  --secondary-subtle: var(--color-violet-50);
+  --secondary-muted: rgba(124, 58, 237, 0.15);
+  --secondary-contrast: var(--color-white);
+  
+  /* Status Colors */
+  --success: #10b981;
+  --success-subtle: #ecfdf5;
+  --success-muted: rgba(16, 185, 129, 0.12);
+  --success-contrast: var(--color-white);
+  
+  --warning: #f59e0b;
+  --warning-subtle: #fffbeb;
+  --warning-muted: rgba(245, 158, 11, 0.12);
+  --warning-contrast: var(--color-white);
+  
+  --error: #ef4444;
+  --error-subtle: #fef2f2;
+  --error-muted: rgba(239, 68, 68, 0.12);
+  --error-contrast: var(--color-white);
+  
+  --info: #0ea5e9;
+  --info-subtle: #f0f9ff;
+  --info-muted: rgba(14, 165, 233, 0.12);
+  --info-contrast: var(--color-white);
+  
+  /* Text Colors */
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-tertiary: var(--color-neutral-500);
+  --text-disabled: var(--color-neutral-400);
+  --text-inverse: var(--color-white);
+  --text-link: #0066ff;
+  --text-link-hover: #0052cc;
+  
+  /* Shadow Overrides for Light Mode */
+  --shadow-glow-primary: 0 0 0 3px var(--primary-muted);
+  --shadow-glow-success: 0 0 0 3px var(--success-muted);
+  --shadow-glow-warning: 0 0 0 3px var(--warning-muted);
+  --shadow-glow-error: 0 0 0 3px var(--error-muted);
+  
+  /* ==========================================================================
+     DESIGN TOKENS - Layout & Sizing
+     Standardized values to eliminate hardcoded sizes
+     ========================================================================== */
+  
+  /* Container */
+  --container-max: 1600px;
+  --container-padding: 1.5rem;
+  
+  /* Component Heights (Size Scale) */
+  --size-xs: 1.5rem;     /* 24px */
+  --size-sm: 2rem;       /* 32px */
+  --size-md: 2.5rem;     /* 40px */
+  --size-lg: 2.75rem;    /* 44px */
+  --size-xl: 3rem;       /* 48px */
+  --size-2xl: 3.5rem;    /* 56px */
+  
+  /* Input Widths */
+  --input-width-xs: 8rem;    /* 128px */
+  --input-width-sm: 12rem;   /* 192px */
+  --input-width-md: 16rem;   /* 256px */
+  --input-width-lg: 20rem;   /* 320px */
+  --input-width-xl: 24rem;   /* 384px */
+  
+  /* Modal Widths */
+  --modal-width-sm: 24rem;   /* 384px */
+  --modal-width-md: 28rem;   /* 448px */
+  --modal-width-lg: 32rem;   /* 512px */
+  --modal-width-xl: 40rem;   /* 640px */
+  
+  /* Table Column Widths */
+  --table-col-xs: 3rem;      /* 48px */
+  --table-col-sm: 5rem;      /* 80px */
+  --table-col-md: 7rem;      /* 112px */
+  --table-col-lg: 9rem;      /* 144px */
+  --table-col-xl: 12rem;     /* 192px */
+  --table-col-2xl: 16rem;    /* 256px */
+  
+  /* Header & Layout */
+  --header-height: 3.5rem;       /* 56px */
+  --header-height-sm: 3rem;      /* 48px */
+  --sidebar-width: 16rem;        /* 256px */
+  --sidebar-width-collapsed: 4rem; /* 64px */
+  
+  /* Min Heights */
+  --min-height-xs: 6rem;     /* 96px */
+  --min-height-sm: 10rem;    /* 160px */
+  --min-height-md: 16rem;    /* 256px */
+  --min-height-lg: 20rem;    /* 320px */
+  --min-height-xl: 24rem;    /* 384px */
+  
+  /* Specific Width Tokens for Detail Views */
+  --width-action: 3.5rem;        /* 56px - Action buttons */
+  --width-checkbox: 2.5rem;      /* 40px - Checkbox column */
+  --width-row-num: 3.5rem;       /* 56px - Row numbers */
+  --width-unit: 4rem;            /* 64px - Unit column */
+  --width-quantity: 5.5rem;      /* 88px - Qty columns */
+  --width-rate: 6.5rem;          /* 104px - Rate columns */
+  --width-value: 7rem;           /* 112px - Value columns */
+  --width-reference: 7.5rem;     /* 120px - Reference numbers */
+  --width-date: 6rem;            /* 96px - Date columns */
+  --width-status: 6.5rem;        /* 104px - Status badges */
+}
+
+/* ==========================================================================
+   DARK THEME
+   VS Code style neutral dark theme
+   ========================================================================== */
+.dark {
+  /* Background Colors - Neutral gray like VS Code default */
+  --background: #1e1e1e;
+  --foreground: #cccccc;
+  --surface: #252526;
+  --surface-elevated: #2d2d2d;
+  --surface-sunken: #181818;
+  --surface-overlay: rgba(37, 37, 38, 0.95);
+  
+  /* Border Colors */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  
+  /* Primary Colors - Soft blue accent */
+  --primary: #3794ff;
+  --primary-hover: #5ba3ff;
+  --primary-active: #7db8ff;
+  --primary-subtle: rgba(55, 148, 255, 0.15);
+  --primary-muted: rgba(55, 148, 255, 0.25);
+  --primary-contrast: #ffffff;
+  
+  /* Secondary Colors - Neutral gray */
+  --secondary: #6c6c6c;
+  --secondary-hover: #858585;
+  --secondary-subtle: rgba(108, 108, 108, 0.15);
+  --secondary-muted: rgba(108, 108, 108, 0.25);
+  --secondary-contrast: #ffffff;
+  
+  /* Status Colors */
+  --success: #4ec9b0;
+  --success-subtle: rgba(78, 201, 176, 0.15);
+  --success-muted: rgba(78, 201, 176, 0.25);
+  --success-contrast: #ffffff;
+  
+  --warning: #dcdcaa;
+  --warning-subtle: rgba(220, 220, 170, 0.15);
+  --warning-muted: rgba(220, 220, 170, 0.25);
+  --warning-contrast: #1e1e1e;
+  
+  --error: #f44747;
+  --error-subtle: rgba(244, 71, 71, 0.15);
+  --error-muted: rgba(244, 71, 71, 0.25);
+  --error-contrast: #ffffff;
+  
+  --info: #3794ff;
+  --info-subtle: rgba(55, 148, 255, 0.15);
+  --info-muted: rgba(55, 148, 255, 0.25);
+  --info-contrast: #ffffff;
+  
+  /* Text Colors */
+  --text-primary: #cccccc;
+  --text-secondary: #999999;
+  --text-tertiary: #6c6c6c;
+  --text-disabled: #4c4c4c;
+  --text-inverse: #1e1e1e;
+  --text-link: #3794ff;
+  --text-link-hover: #5ba3ff;
+  
+  /* Shadow Overrides for Dark Mode */
+  --shadow-glow-primary: 0 0 0 3px var(--primary-muted), 0 0 10px var(--primary-muted);
+  --shadow-glow-success: 0 0 0 3px var(--success-muted), 0 0 10px var(--success-muted);
+  --shadow-glow-warning: 0 0 0 3px var(--warning-muted), 0 0 10px var(--warning-muted);
+  --shadow-glow-error: 0 0 0 3px var(--error-muted), 0 0 10px var(--error-muted);
+}
+
+/* ==========================================================================
+   BASE STYLES
+   Global element styling
+   ========================================================================== */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--leading-normal);
+  }
+  
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-glow-primary);
+  }
+  
+  /* Selection styling */
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-contrast);
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: var(--radius-full);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
+  }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   Consistent text styling
+   ========================================================================== */
+@layer utilities {
+  /* Font Families */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Display Typography */
+  .text-display {
+    font-family: var(--font-display);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  .text-display-sm {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  /* Heading Typography */
+  .text-heading {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  .text-heading-sm {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  .text-subheading {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-snug);
+  }
+  
+  /* Body Typography */
+  .text-body {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--leading-relaxed);
+  }
+  
+  .text-body-sm {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--leading-normal);
+  }
+  
+  /* UI Typography */
+  .text-ui {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-none);
+  }
+  
+  .text-ui-sm {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-wide);
+  }
+  
+  /* Monospace for data */
+  .text-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Explicit Font Weight Mapping for Tailwind v4 */
+  .font-normal { font-weight: var(--font-weight-normal); }
+  .font-medium { font-weight: var(--font-weight-medium); }
+  .font-semibold { font-weight: var(--font-weight-semibold); }
+  .font-bold { font-weight: var(--font-weight-bold); }
+
+  /* Explicit Letter Spacing Mapping */
+  .tracking-tighter { letter-spacing: var(--tracking-tighter); }
+  .tracking-tight { letter-spacing: var(--tracking-tight); }
+  .tracking-normal { letter-spacing: var(--tracking-normal); }
+  .tracking-wide { letter-spacing: var(--tracking-wide); }
+  .tracking-wider { letter-spacing: var(--tracking-wider); }
+  .tracking-widest { letter-spacing: var(--tracking-widest); }
+  
+  /* Semantic Text Colors - Standard Tailwind v4 naming */
+  .text-foreground { color: var(--text-primary); }
+  .text-muted { color: var(--text-secondary); }
+  .text-subtle { color: var(--text-tertiary); }
+  .text-disabled { color: var(--text-disabled); }
+}
+
+/* ==========================================================================
+   SPACING UTILITIES
+   Consistent spacing patterns
+   ========================================================================== */
+@layer utilities {
+  /* Stack - Vertical spacing */
+  .stack-1 > * + * { margin-top: var(--space-1); }
+  .stack-2 > * + * { margin-top: var(--space-2); }
+  .stack-3 > * + * { margin-top: var(--space-3); }
+  .stack-4 > * + * { margin-top: var(--space-4); }
+  .stack-6 > * + * { margin-top: var(--space-6); }
+  .stack-8 > * + * { margin-top: var(--space-8); }
+  
+  /* Row - Horizontal spacing */
+  .row-1 > * + * { margin-left: var(--space-1); }
+  .row-2 > * + * { margin-left: var(--space-2); }
+  .row-3 > * + * { margin-left: var(--space-3); }
+  .row-4 > * + * { margin-left: var(--space-4); }
+  .row-6 > * + * { margin-left: var(--space-6); }
+  .row-8 > * + * { margin-left: var(--space-8); }
+}
+
+/* ==========================================================================
+   GLASSMORPHISM UTILITIES
+   Futuristic translucent effects
+   ========================================================================== */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass {
+    background: rgba(30, 30, 30, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .dark .glass-subtle {
+    background: rgba(30, 30, 30, 0.6);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  
+  .dark .glass-strong {
+    background: rgba(30, 30, 30, 0.95);
+  }
+}
+
+/* ==========================================================================
+   ANIMATION UTILITIES
+   Smooth transitions and effects
+   ========================================================================== */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in var(--duration-normal) var(--ease-out) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up var(--duration-normal) var(--ease-out) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in var(--duration-normal) var(--ease-out) forwards;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s var(--ease-in-out) infinite;
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Stagger animations for lists */
+  .stagger-children > * {
+    animation: slide-up var(--duration-normal) var(--ease-out) forwards;
+    opacity: 0;
+  }
+  
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+  .stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+  .stagger-children > *:nth-child(8) { animation-delay: 350ms; }
+}
+
+/* ==========================================================================
+   INTERACTION UTILITIES
+   Hover and focus states
+   ========================================================================== */
+@layer utilities {
+  .interactive {
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+  
+  .interactive:hover {
+    transform: translateY(-1px);
+  }
+  
+  .interactive:active {
+    transform: translateY(0);
+  }
+  
+  .hover-lift {
+    transition: transform var(--duration-fast) var(--ease-out), 
+                box-shadow var(--duration-fast) var(--ease-out);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .hover-scale {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover-glow {
+    transition: box-shadow var(--duration-fast) var(--ease-out);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow-primary);
+  }
+}
+
+/* ==========================================================================
+   VISUAL UTILITIES
+   Decorative effects
+   ========================================================================== */
+@layer utilities {
+  .gradient-subtle {
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-sunken) 100%);
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  }
+  
+  .gradient-mesh {
+    background-image: 
+      radial-gradient(circle at 0% 0%, var(--primary-muted) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, var(--secondary-muted) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+  
+  .divider-vertical {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--border), transparent);
+  }
+}
+
+/* ==========================================================================
+   COMPONENT PATTERNS
+   Reusable component styles - Use React components instead of these classes
+   ========================================================================== */
+@layer components {
+  /* Status Indicator Dots */
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+  }
+  
+  .status-dot-success { background: var(--success); }
+  .status-dot-warning { background: var(--warning); }
+  .status-dot-error { background: var(--error); }
+  .status-dot-info { background: var(--info); }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY UTILITIES
+   Screen reader and focus management
+   ========================================================================== */
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .focus-ring {
+    outline: none;
+  }
+  
+  .focus-ring:focus-visible {
+    box-shadow: var(--shadow-glow-primary);
+  }
+  
+  .focus-ring-error:focus-visible {
+    box-shadow: var(--shadow-glow-error);
+  }
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   Common layout patterns
+   ========================================================================== */
+@layer utilities {
+  .container-main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-10);
+  }
+  
+  .section {
+    margin-bottom: var(--space-8);
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* ==========================================================================
+   BRAND COLOR UTILITIES
+   Excel, PDF, Word download buttons
+   ========================================================================== */
+@layer utilities {
+  .bg-excel {
+    background-color: var(--color-excel) !important;
+  }
+  .hover\:bg-excel-hover:hover {
+    background-color: var(--color-excel-hover) !important;
+  }
+  .border-excel {
+    border-color: var(--color-excel) !important;
+  }
+  .hover\:border-excel-hover:hover {
+    border-color: var(--color-excel-hover) !important;
+  }
+  .text-excel {
+    color: var(--color-excel) !important;
+  }
+  .hover\:text-excel-hover:hover {
+    color: var(--color-excel-hover) !important;
+  }
+  
+  .bg-pdf {
+    background-color: var(--color-pdf) !important;
+  }
+  .hover\:bg-pdf-hover:hover {
+    background-color: var(--color-pdf-hover) !important;
+  }
+  .border-pdf {
+    border-color: var(--color-pdf) !important;
+  }
+  
+  .bg-word {
+    background-color: var(--color-word) !important;
+  }
+  .hover\:bg-word-hover:hover {
+    background-color: var(--color-word-hover) !important;
+  }
+  .border-word {
+    border-color: var(--color-word) !important;
+  }
+  
+  /* Text color utilities for brand colors */
+  .text-primary {
+    color: var(--primary) !important;
+  }
+  .hover\:text-primary-hover:hover {
+    color: var(--primary-hover) !important;
+  }
+}
+
+/* ==========================================================================
+   DESIGN TOKEN UTILITY CLASSES
+   Use these instead of hardcoded arbitrary values
+   ========================================================================== */
+
+/* Container */
+.max-w-container { max-width: var(--container-max); }
+.p-container { padding: var(--container-padding); }
+.px-container { padding-left: var(--container-padding); padding-right: var(--container-padding); }
+
+/* Component Sizes (Height) */
+.h-size-xs { height: var(--size-xs); }
+.h-size-sm { height: var(--size-sm); }
+.h-size-md { height: var(--size-md); }
+.h-size-lg { height: var(--size-lg); }
+.h-size-xl { height: var(--size-xl); }
+.h-size-2xl { height: var(--size-2xl); }
+.h-size-compact { height: 1.5rem; }  /* 24px - Icon buttons */
+
+/* Component Sizes (Width) */
+.w-size-xs { width: var(--size-xs); }
+.w-size-sm { width: var(--size-sm); }
+.w-size-md { width: var(--size-md); }
+.w-size-lg { width: var(--size-lg); }
+.w-size-xl { width: var(--size-xl); }
+.w-size-2xl { width: var(--size-2xl); }
+.w-size-compact { width: 1.5rem; }  /* 24px - Icon buttons */
+
+/* Input Widths */
+.w-input-xs { width: var(--input-width-xs); }
+.w-input-sm { width: var(--input-width-sm); }
+.w-input-md { width: var(--input-width-md); }
+.w-input-lg { width: var(--input-width-lg); }
+.w-input-xl { width: var(--input-width-xl); }
+
+/* Modal Widths */
+.max-w-modal-sm { max-width: var(--modal-width-sm); }
+.max-w-modal-md { max-width: var(--modal-width-md); }
+.max-w-modal-lg { max-width: var(--modal-width-lg); }
+.max-w-modal-xl { max-width: var(--modal-width-xl); }
+
+/* Table Column Widths */
+.w-table-xs { width: var(--table-col-xs); }
+.w-table-sm { width: var(--table-col-sm); }
+.w-table-md { width: var(--table-col-md); }
+.w-table-lg { width: var(--table-col-lg); }
+.w-table-xl { width: var(--table-col-xl); }
+.w-table-2xl { width: var(--table-col-2xl); }
+
+/* Button Padding */
+.px-btn-horiz { padding-left: 0.75rem; padding-right: 0.75rem; }  /* 12px */
+.py-btn-vert { padding-top: 0.375rem; padding-bottom: 0.375rem; }  /* 6px */
+
+/* Detail View Specific Widths */
+.w-col-action { width: var(--width-action); }
+.w-col-checkbox { width: var(--width-checkbox); }
+.w-col-row-num { width: var(--width-row-num); }
+.w-col-unit { width: var(--width-unit); }
+.w-col-qty { width: var(--width-quantity); }
+.w-col-rate { width: var(--width-rate); }
+.w-col-value { width: var(--width-value); }
+.w-col-ref { width: var(--width-reference); }
+.w-col-date { width: var(--width-date); }
+.w-col-status { width: var(--width-status); }
+
+/* Header Heights */
+.h-header { height: var(--header-height); }
+.h-header-sm { height: var(--header-height-sm); }
+
+/* Sidebar Widths */
+.w-sidebar { width: var(--sidebar-width); }
+.w-sidebar-collapsed { width: var(--sidebar-width-collapsed); }
+
+/* Minimum Heights */
+.min-h-xs { min-height: var(--min-height-xs); }
+.min-h-sm { min-height: var(--min-height-sm); }
+.min-h-md { min-height: var(--min-height-md); }
+.min-h-lg { min-height: var(--min-height-lg); }
+.min-h-xl { min-height: var(--min-height-xl); }
+
+/* Viewport-based minimum heights (for loading states) */
+.min-h-screen-50 { min-height: 50vh; }
+.min-h-screen-60 { min-height: 60vh; }
+.min-h-screen-75 { min-height: 75vh; }
+
+/* ==========================================================================
+   TEXT SIZE UTILITIES (Additional)
+   For fine typography control
+   ========================================================================== */
+
+.text-2xs {
+  font-size: 0.625rem; /* 10px */
+  line-height: 0.875rem; /* 14px */
+}
+
+/* ==========================================================================
+   TABLE UTILITIES
+   Consistent table styling
+   ========================================================================== */
+
+.table-container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   FORM UTILITIES
+   Consistent form styling
+   ========================================================================== */
+
+.form-section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.form-section-header {
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background-color: color-mix(in srgb, var(--surface-sunken) 30%, transparent);
+}
+
+.form-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   LOADING STATE UTILITIES
+   Standardized loading placeholders
+   ========================================================================== */
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--min-height-md);
+}
+
+.loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--primary);
+  border-top-color: transparent;
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY STANDARDIZATION
+   Consistent text colors, weights, and spacing
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TEXT COLOR UTILITIES - Semantic mapping
+   Use these instead of arbitrary text-* utilities
+   -------------------------------------------------------------------------- */
+
+/* Primary text - main content */
+.text-primary { color: var(--text-primary); }
+
+/* Secondary text - labels, descriptions */
+.text-secondary { color: var(--text-secondary); }
+
+/* Tertiary text - hints, placeholders */
+.text-tertiary { color: var(--text-tertiary); }
+
+/* Alias utilities for backward compatibility - prefer semantic names */
+.text-default { color: var(--text-primary); }
+.text-caption { color: var(--text-secondary); }
+.text-hint { color: var(--text-tertiary); }
+
+/* Primary contrast - for text on primary background (buttons, badges) */
+.text-primary-contrast { color: var(--primary-contrast); }
+
+/* --------------------------------------------------------------------------
+   TRACKING STANDARDIZATION
+   Limited set of letter-spacing values
+   -------------------------------------------------------------------------- */
+
+/* Standard tracking - body text, labels */
+.tracking-label {
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Wider tracking - uppercase labels, headers */
+.tracking-header {
+  letter-spacing: var(--tracking-wider);
+}
+
+/* Widest tracking - small uppercase text */
+.tracking-caps {
+  letter-spacing: var(--tracking-widest);
+}
+
+/* Tight tracking - large headings */
+.tracking-display {
+  letter-spacing: var(--tracking-tight);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM v3.0 - ERP Material Design
+   
+   15 Core Roles (5 Categories × 3 Sizes)
+   Based on Material Design 3 + ERP best practices
+   
+   DISPLAY:  Dashboard hero metrics
+   HEADLINE: Page structure
+   TITLE:    Component headers
+   BODY:     Content text
+   LABEL:    UI elements (form labels, table headers)
+   MONO:     Data display (numbers, codes)
+   
+   Accessibility:
+   - Form labels: 14px minimum (typo-label-lg)
+   - Table headers: 12px uppercase (typo-label-md)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DISPLAY - Dashboard/Hero (24-36px)
+   Use for: KPI values, hero metrics, dashboard titles
+   -------------------------------------------------------------------------- */
+.typo-display-lg {
+  font-size: 2.25rem;      /* 36px */
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.typo-display-md {
+  font-size: 1.75rem;      /* 28px */
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.typo-display-sm {
+  font-size: 1.5rem;       /* 24px */
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   HEADLINE - Page Structure (16-22px)
+   Use for: Page titles, major sections, sub-sections
+   -------------------------------------------------------------------------- */
+.typo-headline-lg {
+  font-size: 1.375rem;     /* 22px */
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.typo-headline-md {
+  font-size: 1.125rem;     /* 18px */
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.typo-headline-sm {
+  font-size: 1rem;         /* 16px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   TITLE - Component Headers (14-16px)
+   Use for: Card headers, modal titles, list headers
+   -------------------------------------------------------------------------- */
+.typo-title-lg {
+  font-size: 1rem;         /* 16px */
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.typo-title-md {
+  font-size: 0.875rem;     /* 14px */
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.typo-title-sm {
+  font-size: 0.875rem;     /* 14px */
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   BODY - Content (12-16px)
+   Use for: Primary content, descriptions, helper text
+   -------------------------------------------------------------------------- */
+.typo-body-lg {
+  font-size: 1rem;         /* 16px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.typo-body-md {
+  font-size: 0.875rem;     /* 14px - BASE SIZE */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.typo-body-sm {
+  font-size: 0.75rem;      /* 12px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   LABEL - UI Elements (11-14px)
+   Use for: Form labels, table headers, badges, metadata
+   
+   IMPORTANT:
+   - typo-label-lg (14px): Form labels (accessibility)
+   - typo-label-md (12px): Table headers (uppercase)
+   - typo-label-sm (11px): Timestamps, metadata
+   -------------------------------------------------------------------------- */
+.typo-label-lg {
+  font-size: 0.875rem;     /* 14px - Form labels, accessible */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.typo-label-md {
+  font-size: 0.75rem;      /* 12px - Table headers, badges */
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.typo-label-sm {
+  font-size: 0.6875rem;    /* 11px - Timestamps, metadata */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   MONO - Data Display (12-16px)
+   Use for: Numbers, codes, IDs, financial values
+   -------------------------------------------------------------------------- */
+.typo-mono-lg {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;         /* 16px */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.typo-mono-md {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;     /* 14px */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.typo-mono-sm {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;      /* 12px */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Status color utilities (use with any typo class)
+   -------------------------------------------------------------------------- */
+.text-success { color: var(--status-success); }
+.text-warning { color: var(--status-warning); }
+.text-error { color: var(--status-error); }
+.text-info { color: var(--status-info); }
+

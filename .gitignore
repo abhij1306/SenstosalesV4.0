@@ -1,0 +1,127 @@
+# ============================================
+# SenstoSales ERP - GitIgnore Configuration
+# ============================================
+
+# ============================================
+# Database & Local Data - Database IS committed to GitHub with demo data
+# ============================================
+# NOTE: The database file (db/business.db) is tracked in git for easy deployment
+# To reset: Delete db/business.db and restart the backend
+#
+# Individual temp files can be ignored if needed:
+# db/*.tmp
+# db/*.wal
+# db/*.shm
+data/
+!data/.gitkeep
+Downloads/
+!Downloads/.gitkeep
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================
+# Virtual Environments
+# ============================================
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+
+# ============================================
+# Node.js / Frontend
+# ============================================
+node_modules/
+.next/
+out/
+dist/
+build/
+*.local
+
+# ============================================
+# IDE & Editor
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Logs & Diagnostics
+# ============================================
+*.log
+logs/
+!logs/.gitkeep
+diagnostics.log
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================
+# Cache & Temporary
+# ============================================
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+*.tsbuildinfo
+.tsc_output.log
+build_error.log
+
+# ============================================
+# Environment Variables Template
+# ============================================
+.env
+.env.local
+.env.*.local
+!env.example
+
+# ============================================
+# Exe Build Output (if building executable)
+# ============================================
+*.exe
+*.dll
+*.so
+*.dylib
+dist/
+release/
+
+# ============================================
+# Backup Files
+# ============================================
+*.bak
+*.backup
+*_backup_*
