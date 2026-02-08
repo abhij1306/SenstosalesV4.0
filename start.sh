@@ -7,10 +7,10 @@ echo "Starting SenstoSales ERP Backend..."
 if [ ! -f "db/business.db" ]; then
     echo "Creating database..."
     cd backend
-    python -c "from db.bootstrap import bootstrap_db; bootstrap_db()"
+    python3 -c "from db.bootstrap import bootstrap_db; bootstrap_db()"
     cd ..
 fi
 
 # Run the backend
 cd backend
-exec python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+exec python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT
