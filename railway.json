@@ -1,15 +1,10 @@
 {
   "$schema": "https://railway.com/schema.json",
   "build": {
-    "builder": "PYTHON",
-    "python": {
-      "version": "3.11",
-      "requirementsPath": "backend/requirements.txt"
-    }
+    "builder": "NIXPACKS"
   },
   "deploy": {
     "startCommand": "bash start.sh",
-    "healthcheckPath": "/api/health",
-    "healthcheckTimeout": 30
+    "healthcheckPath": "/api/health"
   }
 }
