@@ -1,5 +1,0 @@
-[build]
-buildCommand = "pip install -r backend/requirements.txt"
-
-[start]
-startCommand = "bash start.sh"
